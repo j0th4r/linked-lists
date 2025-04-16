@@ -1,4 +1,4 @@
-import Node from './node.js'
+import Node from './node.js';
 
 export default class LinkedList {
   constructor() {
@@ -9,27 +9,27 @@ export default class LinkedList {
 
   append(value) {
     const newNode = new Node(value);
-    this.size += 1; 
+    this.size += 1;
 
     if (this.head === null) {
       this.head = newNode;
       this.tail = newNode;
     } else {
-      this.tail.next = newNode
-      this.tail = newNode
+      this.tail.next = newNode;
+      this.tail = newNode;
     }
   }
 
   prepend(value) {
     const newNode = new Node(value);
-    this.size += 1; 
+    this.size += 1;
 
     if (this.head === null) {
       this.head = newNode;
       this.tail = newNode;
     } else {
-      newNode.next = this.head
-      this.head = newNode
+      newNode.next = this.head;
+      this.head = newNode;
     }
   }
 
@@ -46,13 +46,13 @@ export default class LinkedList {
   }
 
   at(index) {
-    let current = this.head
+    let current = this.head;
 
     for (let i = 0; i < index; i++) {
-      current = current.next
+      current = current.next;
     }
 
-    return current
+    return current;
   }
 
   pop() {
@@ -62,9 +62,9 @@ export default class LinkedList {
     } else {
       let current = this.head;
 
-      while(current.next !== this.tail) {
-      current = current.next
-        }
+      while (current.next !== this.tail) {
+        current = current.next;
+      }
 
       current.next = null;
       this.tail = current;
@@ -77,9 +77,9 @@ export default class LinkedList {
 
     while (current !== null) {
       if (value == current.value) {
-        return true
+        return true;
       }
-      current = current.next
+      current = current.next;
     }
     return false;
   }
@@ -90,43 +90,43 @@ export default class LinkedList {
 
     while (current !== null) {
       if (value == current.value) {
-        return index
+        return index;
       }
-      current = current.next
+      current = current.next;
       index++;
     }
 
     return null;
   }
-  
+
   toString() {
     let current = this.head;
-    let result = "";
+    let result = '';
 
-    while(current !== null) {
+    while (current !== null) {
       result += ` ( ${current.value} ) ->`;
-      current = current.next
+      current = current.next;
     }
-    result += ` null`
+    result += ' null';
     return result;
   }
 
   insertAt(value, index) {
-    this.size += 1
+    this.size += 1;
 
     if (index === 0) {
-      this.prepend(value)
+      this.prepend(value);
     }
 
     if (index === this.size) {
-      this.append(value)
+      this.append(value);
     }
 
     const newNode = new Node(value);
     let current = this.head;
 
     for (let i = 0; i < index - 1; i++) {
-      current = current.next
+      current = current.next;
     }
 
     newNode.next = current.next;
@@ -134,27 +134,25 @@ export default class LinkedList {
   }
 
   removeAt(index) {
-  
     if (index === 0) {
-      this.head = this.head.next
-      if(this.head === null) {
+      this.head = this.head.next;
+      if (this.head === null) {
         this.tail = null;
       }
-      this.size -= 1
-      return
+      this.size -= 1;
+      return;
     }
 
     if (index === this.size - 1) {
-      this.pop()
-      return
+      this.pop();
+      return;
     }
 
     let current = this.head;
     for (let i = 0; i < index - 1; i++) {
-      current = current.next
+      current = current.next;
     }
-    current.next = current.next.next
+    current.next = current.next.next;
     this.size -= 1;
-
   }
 }

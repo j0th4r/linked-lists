@@ -6,7 +6,7 @@ This repository contains a JavaScript implementation of a **Linked List** based 
 
 This project demonstrates a classic data structure: the **Singly Linked List**. The implementation is done using modern JavaScript classes or factory functions, following object-oriented principles.
 
-The `LinkedList` manages a collection of `Node` objects, each containing a `value` and a reference to the `nextNode`.
+The `LinkedList` manages a collection of `Node` objects, each containing a `value` and a reference to the `next`.
 
 ---
 
@@ -18,7 +18,7 @@ The `LinkedList` manages a collection of `Node` objects, each containing a `valu
   Represents a single node in the list.  
   Properties:
   - `value`: stores the data
-  - `nextNode`: pointer to the next node (default is `null`)
+  - `next`: pointer to the next node (default is `null`)
 
 - **`LinkedList`**  
   Manages the list as a whole and provides methods to interact with it.
@@ -50,7 +50,7 @@ Additional features for more robust functionality:
 - `insertAt(value, index)` – Inserts a new node at the specified index.
 - `removeAt(index)` – Removes the node at the specified index.
 
-These functions update `nextNode` references to maintain proper linkage.
+These functions update `next` references to maintain proper linkage.
 
 ---
 
